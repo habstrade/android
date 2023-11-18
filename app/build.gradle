@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id "org.sonarqube" version "4.4.1.3373"
 }
 
 android {
@@ -58,4 +59,11 @@ task wrapper(type: Wrapper) {
 
 task prepareKotlinBuildScriptModel {
 
+}
+sonar {
+    properties {
+        property "sonar.projectKey", "habstrade_android"
+        property "sonar.organization", "habstrade"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
 }
